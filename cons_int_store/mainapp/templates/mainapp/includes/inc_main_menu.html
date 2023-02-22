@@ -1,0 +1,251 @@
+ {% load static %}
+ <!-- Header Top Start -->
+ <div class="header-top">
+    <div class="container">
+        <div class="row">
+            <!-- Header Top left Start -->                        
+            <div class="col-lg-4 col-md-12 d-center">
+                <div class="header-top-left">
+                    <img src="{% static 'img/icon/call.png' %}" alt="">Позвоните нам: +11 222 3333
+                </div>                        
+            </div>
+            <!-- Header Top left End -->
+            <!-- Search Box Start -->                                        
+            <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                <div class="search-box-view">
+                    <form action="#">
+                        <input type="text" class="email" placeholder="Search Your Product" name="product">
+                        <button type="submit" class="submit"></button>
+                    </form>
+                </div>                                           
+            </div>
+            <!-- Search Box End --> 
+            <!-- Header Top Right Start -->                                       
+            <div class="col-lg-4 col-md-12">
+                <div class="header-top-right">
+                    <ul class="header-list-menu f-right">
+                        <!-- Language Start -->
+                        <li><a href="#">Язык: Русский <i class="fa fa-angle-down"></i></a>
+                            <ul class="ht-dropdown">
+                                <li><a href="#">Spanish</a></li>
+                                <li><a href="#">Bengali</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </li>
+                        <!-- Language End -->                                
+                        <!-- Currency Start -->
+                        <li><a href="#">Курс валют:  USD <i class="fa fa-angle-down"></i></a>
+                            <ul class="ht-dropdown">
+                                <li><a href="#">USD</a></li>
+                                <li><a href="#">GBP</a></li>
+                                <li><a href="#">EUR</a></li>
+                            </ul>
+                        </li>
+                        <!-- Currency End -->
+                    </ul>
+                    <!-- Header-list-menu End -->
+                </div>
+            </div>
+            <!-- Header Top Right End -->
+        </div>
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Header Top End -->
+<!-- Header Bottom Start -->
+<div class="header-bottom header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
+                <div class="logo">
+                    <a href="{% url 'main' %}"><img src="{% static 'img/logo/logo.png' %}" alt="logo-image"></a>
+                </div>
+            </div>
+            <!-- Primary Vertical-Menu End -->
+            <!-- Search Box Start -->
+            <div class="col-xl-6 col-lg-7 d-none d-lg-block">
+                <div class="middle-menu pull-right">
+                    <nav>
+                        <ul class="middle-menu-list">
+                            <li><a href="{% url 'main' %}">Домой<i class="fa fa-angle-down"></i></a>
+                                <!-- Home Version Dropdown Start -->
+                                <ul class="ht-dropdown home-dropdown">
+                                    <li><a href="{% url 'main' %}">Home Version One</a></li>
+                                    <li><a href="{% url 'main' %}">Home Version Two</a></li>
+                                    <li><a href="{% url 'main' %}">Home Box Layout</a></li>
+                                </ul>
+                                <!-- Home Version Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>                                        
+                            <li><a href="{% url 'shop' %}">Магаз<i class="fa fa-angle-down"></i></a>
+                                <!-- Home Version Dropdown Start -->
+                                <ul class="ht-dropdown dropdown-style-two">
+                                    <li><a href="{% url 'shop' %}">Магаз</a>
+                                        <!-- Start Two Step -->
+                                        <ul class="ht-dropdown dropdown-style-two sub-menu">
+                                            <li><a href="{% url 'shop' %}">Product Category Name</a>
+                                                <!-- Start Three Step -->
+                                                <ul class="ht-dropdown dropdown-style-two sub-menu">
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                            <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'product:index' %}">product details Page</a></li>
+                                    <li><a href="{% url 'compare' %}">Compare Page</a></li>
+                                    <li><a href="{% url 'cart' %}">Cart Page</a></li>
+                                    <li><a href="{% url 'checkout' %}">Checkout Page</a></li>
+                                    <li><a href="{% url 'wishlist' %}">Wishlist Page</a></li>
+                                </ul>
+                                <!-- Home Version Dropdown End -->
+                            </li>                                        
+                            <li><a href="{% url 'blog' %}">Блог<i class="fa fa-angle-down"></i></a>
+                                <!-- Home Version Dropdown Start -->
+                                <ul class="ht-dropdown dropdown-style-two">
+                                    <li><a href="blog.html">Blog Page</a></li>
+                                    <li><a href="blog-details.html">Blog Details Page</a></li>
+                                </ul>
+                                <!-- Home Version Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'main' %}">Вход<i class="fa fa-angle-down"></i></a>
+                                <!-- Home Version Dropdown Start -->
+                                <ul class="ht-dropdown dropdown-style-two">
+                                    <li><a href="login.html">Login Page</a></li>
+                                    <li><a href="register.html">Register Page</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="forgot-password.html">Forgot Password Page</a></li>
+                                    <li><a href="account.html">Account Page</a></li>
+                                </ul>
+                                <!-- Home Version Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'contact' %}">Контакты</a></li>                                        
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Search Box End -->
+            <!-- Cartt Box Start -->
+            <div class="col-lg-3 col-sm-7 col-7">
+                <div class="cart-box text-right">
+                    <ul>
+                        <li><a href="compare.html"><i class="fa fa-cog"></i></a>
+                            <ul class="ht-dropdown">
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="register.html">Register</a></li>
+                                <li><a href="account.html">Account</a></li>                                            
+                            </ul>
+                        </li>                                    
+                        <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                            <ul class="ht-dropdown main-cart-box">
+                                <li>
+                                    <!-- Cart Box Start -->
+                                    <div class="single-cart-box">
+                                        <div class="cart-img">
+                                            <a href="#"><img src="{% static 'img/menu/1.jpg' %}" alt="cart-image"></a>
+                                        </div>
+                                        <div class="cart-content">
+                                            <h6><a href="{% url 'product:index' %}">Products Name</a></h6>
+                                            <span>1 × $399.00</span>
+                                        </div>
+                                        <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                    </div>
+                                    <!-- Cart Box End -->
+                                    <!-- Cart Box Start -->
+                                    <div class="single-cart-box">
+                                        <div class="cart-img">
+                                            <a href="#"><img src="{% static 'img/menu/2.jpg' %}" alt="cart-image"></a>
+                                        </div>
+                                        <div class="cart-content">
+                                            <h6><a href="{% url 'product:index' %}">Products Name</a></h6>
+                                            <span>2 × $299.00</span>
+                                        </div>
+                                        <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                    </div>
+                                    <!-- Cart Box End -->
+                                    <!-- Cart Footer Inner Start -->
+                                    <div class="cart-footer fix">
+                                        <h5>total :<span class="f-right">$698.00</span></h5>
+                                        <div class="cart-actions">
+                                            <a class="checkout" href="checkout.html">Checkout</a>
+                                        </div>
+                                    </div>
+                                    <!-- Cart Footer Inner End -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Cartt Box End -->
+            <div class="col-sm-12 d-lg-none">
+                <div class="mobile-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'main' %}">Домой</a>
+                                <!-- Home Version Dropdown Start -->
+                                <ul>
+                                    <li><a href="{% url 'main' %}">Home Version One</a></li>
+                                    <li><a href="{% url 'main' %}">Home Version Two</a></li>
+                                    <li><a href="{% url 'main' %}">Home Box Layout</a></li>
+                                </ul>
+                                <!-- Home Version Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'shop' %}">shop</a>
+                                <!-- Mobile Menu Dropdown Start -->
+                                <ul>
+                                    <li><a href="{% url 'product:index' %}">Магаз</a>
+                                        <ul>
+                                            <li><a href="{% url 'shop' %}">Product Category Name</a>
+                                                <!-- Start Three Step -->
+                                                <ul>
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'shop' %}">Категория продукта</a></li>
+                                            <li><a href="{% url 'shop' %}">Категория продукта</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'product:index' %}">product details Page</a></li>
+                                    <li><a href="{% url 'compare' %}">Compare Page</a></li>
+                                    <li><a href="{% url 'cart' %}">Cart Page</a></li>
+                                    <li><a href="{% url 'checkout' %}">Checkout Page</a></li>
+                                    <li><a href="{% url 'wishlist' %}">Wishlist Page</a></li>
+                                </ul>
+                                <!-- Mobile Menu Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'blog' %}">Blog</a>
+                                <!-- Mobile Menu Dropdown Start -->
+                                <ul>
+                                    <li><a href="{% url 'blog-details' %}">Blog Details Page</a></li>
+                                </ul>
+                                <!-- Mobile Menu Dropdown End -->
+                            </li>
+                            <li><a href="#">pages</a>
+                                <!-- Mobile Menu Dropdown Start -->
+                                <ul>
+                                    <li><a href="login.html">Вход</a></li>
+                                    <li><a href="register.html">Регистрация</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                </ul>
+                                <!-- Mobile Menu Dropdown End -->
+                            </li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'contact' %}">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Mobile Menu  End -->                        
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Header Bottom End -->

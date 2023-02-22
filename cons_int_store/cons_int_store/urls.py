@@ -16,10 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainapp import views as mainapp
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', mainapp.index),
-    path('shop/', mainapp.shop),
-    path('about/', mainapp.about),
+    path('', mainapp.index, name='main'),
+    path('shop/', mainapp.shop, name='shop'),
+    path('about/', mainapp.about, name='about'),
+    path('product/', include('mainapp.urls', namespace='product')),
+    path('compare/', mainapp.compare, name='compare'),
+    path('cart/', mainapp.cart, name='cart'),
+    path('checkout/', mainapp.checkout, name='checkout'),
+    path('wishlist/', mainapp.wishlist, name='wishlist'),
+    path('blog/', mainapp.blog, name='blog'),
+    path('blog-details/', mainapp.blog_details, name='blog-details'),
+    path('contact/', mainapp.contact, name='contact'),
 ]
+
+# Чтобы Django раздавал медиафайлы на этапе разработки, необходимо 
+# сообщить Django, что нужно папку на диске MEDIA_ROOT сделать доступной по
+# сетевому адресу MEDIA_URL.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
