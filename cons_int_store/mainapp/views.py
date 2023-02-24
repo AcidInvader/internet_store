@@ -4,7 +4,7 @@ from mainapp.models import Product
 # Create your views here.
 
 def index(request):
-    products = Product.objects.all()[:2]
+    products = Product.objects.all()
     
     return render(request, 'mainapp/index-3.html', context={
         'products': products,
