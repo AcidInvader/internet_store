@@ -7,10 +7,10 @@
             <div class="col-sm-6">
                 <div class="well">
                     <div class="new-customer">
-                        <h3>NEW CUSTOMER</h3>
-                        <p class="mtb-10"><strong>Register</strong></p>
-                        <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made</p>
-                        <a class="customer-btn" href="register.html">continue</a>
+                        <h3>Новый покупатель</h3>
+                        <p class="mtb-10"><strong>Регистрация</strong></p>
+                        <p>С аккаунтом вы сможете совершать покупки быстрее, просматривать статус заказа, отслеживать доставку</p>
+                        <a class="customer-btn" href="register.html">продолжить</a>
                     </div>
                 </div>
             </div>
@@ -19,19 +19,14 @@
             <div class="col-sm-6">
                 <div class="well">
                     <div class="return-customer">
-                        <h3 class="mb-10">RETURNING CUSTOMER</h3>
-                        <p class="mb-10"><strong>I am a returning customer</strong></p>
-                        <form action="#">
-                            <div class="form-group">
-                                <label class="control-label">Enter your email address here...</label>
-                                <input type="text" name="email" placeholder="Enter your email address here..." id="input-email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Password</label>
-                                <input type="text" name="pass" placeholder="Password" id="input-password" class="form-control">
-                            </div>
+                        <h3 class="mb-10">Вход в личный кабинет</h3>
+                        <p class="mb-10"><strong>У меня уже есть аккаунт</strong></p>
+                        <form action="{% url 'auth:login' %}" method="POST">
+                            {% csrf_token %}
+                            {{ login_form.as_p }}
+                                
                             <p class="lost-password"><a href="forgot-password.html">Forgot password?</a></p>
-                            <input type="submit" value="Login" class="return-customer-btn">
+                            <input type="submit" value="Войти" class="return-customer-btn">
                         </form>
                     </div>
                 </div>
