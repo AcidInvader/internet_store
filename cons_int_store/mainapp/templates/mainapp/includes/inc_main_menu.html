@@ -1,4 +1,5 @@
  {% load static %}
+
  <!-- Header Top Start -->
  <div class="header-top">
     <div class="container">
@@ -6,7 +7,7 @@
             <!-- Header Top left Start -->                        
             <div class="col-lg-4 col-md-12 d-center">
                 <div class="header-top-left">
-                    <img src="{% static 'img/icon/call.png' %}" alt="">Позвоните нам: +11 222 3333
+                    <img src="{% static 'img/icon/call.png' %}" alt="">Позвоните нам: +7 499 567 43 54
                 </div>                        
             </div>
             <!-- Header Top left End -->
@@ -25,13 +26,18 @@
                 <div class="header-top-right">
                     <ul class="header-list-menu f-right">
                         <!-- Language Start -->
-                        <li><a href="#">Язык: Русский <i class="fa fa-angle-down"></i></a>
+                        {% if user %}
+                        <li><a href="{% url 'auth:edit' %}">{{ user.first_name|default:'Пользователь' }} <i class="fa fa-angle-down"></i></a>
+                        {% endif %}
                             <ul class="ht-dropdown">
-                                <li><a href="#">Spanish</a></li>
-                                <li><a href="#">Bengali</a></li>
-                                <li><a href="#">English</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'auth:logout' %}">Выйти</a></li>
+                                {% else %}
+                                <li><a href="{% url 'auth:login' %}">Войти</a></li>
+                                {% endif %}
                             </ul>
                         </li>
+                        
                         <!-- Language End -->                                
                         <!-- Currency Start -->
                         <li><a href="#">Курс валют:  USD <i class="fa fa-angle-down"></i></a>
@@ -114,8 +120,8 @@
                             <li><a href="{% url 'main' %}">Вход<i class="fa fa-angle-down"></i></a>
                                 <!-- Home Version Dropdown Start -->
                                 <ul class="ht-dropdown dropdown-style-two">
-                                    <li><a href="login.html">Login Page</a></li>
-                                    <li><a href="register.html">Register Page</a></li>
+                                    <li><a href="{% url 'auth:login' %}">Страница входа</a></li>
+                                    <li><a href="{% url 'auth:register' %}">Страница Регистрации</a></li>
                                     <li><a href="404.html">404 Page</a></li>
                                     <li><a href="forgot-password.html">Forgot Password Page</a></li>
                                     <li><a href="account.html">Account Page</a></li>

@@ -9,8 +9,8 @@
                     <!-- Slider Background  Image Start-->
                     {% for product in products %}
                     <div id="slider" class="nivoSlider">
-                        <a href="{% url 'shop' %}"> <img src="/media/{{ product.image }}" width="775px" height="430px" data-thumb="img/slider/5.jpg" alt="" title="#slider-1-caption1"/></a>
-                        <a href="{% url 'shop' %}"><img src="/media/{{ product.image }}" width="775px" height="430px" data-thumb="img/slider/6.jpg" alt="" title="#slider-1-caption2"/></a>
+                        <a href="{% url 'shop' %}"> <img src="/media/{{ product.image }}" data-thumb="img/slider/5.jpg" alt="" title="#slider-1-caption1"/></a>
+                        <a href="shop.html"><img src="img/slider/6.jpg" data-thumb="img/slider/6.jpg" alt="" title="#slider-1-caption2"/></a>
                     </div>
                     {% endfor %}
                     <!-- Slider Background  Image Start-->
@@ -20,7 +20,7 @@
                                 <h4 class="title2 wow bounceInLeft text-white mb-16" data-wow-duration="2s" data-wow-delay="0s">Big Sale</h4>
                                 <h1 class="title1 wow bounceInRight text-white mb-16" data-wow-duration="2s" data-wow-delay="1s">Hand Tools <br>Power Saw Machine</h1>
                                 <div class="banner-readmore wow bounceInUp mt-35" data-wow-duration="2s" data-wow-delay="2s">
-                                    <a class="button slider-btn" href="{% url 'shop' %}">Shop Now</a>                    
+                                    <a class="button slider-btn" href="shop.html">Shop Now</a>                    
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                                 <h4 class="title2 wow bounceInLeft text-white mb-16" data-wow-duration="1s" data-wow-delay="1s">Big Sale</h4>
                                 <h1 class="title1 wow flipInX text-white mb-16" data-wow-duration="1s" data-wow-delay="2s">Hand Tools <br>Power Saw Machine</h1>
                                 <div class="banner-readmore wow bounceInUp mt-35" data-wow-duration="1s" data-wow-delay="3s">
-                                    <a class="button slider-btn" href="{% url 'shop' %}">Shop Now</a>                    
+                                    <a class="button slider-btn" href="shop.html">Shop Now</a>                    
                                 </div>
                             </div>       
                         </div>
@@ -39,14 +39,18 @@
                 </div>
             </div>
             <div class="col-md-4">
-                {% for product in products %}
-                    <div class="single-banner zoom mb-20">                    
-                        <a href="{% url 'main' %}"><img src="/media/{{ product.image }}" width="375px" height="205px" alt="slider-banner"></a>
-                    </div>
-                {% endfor %}
+                 <!-- Single Banner Start -->
+                <div class="single-banner zoom mb-20">
+                    <a href="#"><img src="{% static 'img/banner/9.jpg' %}" alt="slider-banner"></a>
+                </div>
+                <!-- Single Banner End -->
+                <!-- Single Banner Start -->
+                <div class="single-banner zoom">
+                    <a href="#"><img src="{% static 'img/banner/10.jpg' %}" alt="slider-banner"></a>
+                </div>
+                <!-- Single Banner End -->
             </div>
-            
         </div>
     </div>
 </div>
-<!-- Slider Area End -->
+<!-- Slider Area End --> 

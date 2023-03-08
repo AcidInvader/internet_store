@@ -1,0 +1,30 @@
+{% extends 'authapp/base.html' %}
+
+<body>
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Area Start -->
+        {% block head %}
+            {% comment %} {% include 'authapp/includes/inc_header.html' %} {% endcomment %}
+        {% endblock %}
+        <!-- Header Area End --> 
+        <!-- Breadcrumb Start -->
+        {% block Breadcrumb %}
+            {% include 'authapp/includes/inc_breadcrumb.html' %}
+        {% endblock %}
+        <!-- Breadcrumb End -->
+        <!-- LogIn Page Start -->
+        {% block LogIn_Page%}
+            {% include 'authapp/includes/inc_logIn_page.html' %}
+        {% endblock %}
+        <!-- LogIn Page End -->
+        <!-- Brand Logo Start -->
+        {% block brand_logo %}
+            {% include 'authapp/includes/inc_brand_logo.html' %}
+        {% endblock %}
+        <!-- Brand Logo End -->
+    </div>
+        

@@ -1,0 +1,54 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Wrapper Start -->
+<div class="wrapper">
+    <!-- Header Area Start -->
+    {% block head %}
+        {% include 'mainapp/includes/inc_main_menu.html' %}
+    {% endblock %}
+    <!-- Header Area End -->    
+    <!-- Breadcrumb Start -->
+    {% block Breadcrumb %}
+        {% include 'authapp/includes/inc_breadcrumb.html' %}
+    {% endblock %}
+        <!-- Container End -->
+    </div>
+    <!-- Breadcrumb End -->
+    <!-- Register Account Start -->
+    {% block LogIn_Page%}
+    <div class="register-account pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="register-title">
+                        <h3 class="mb-10">Регистрация Аккаунта</h3>
+                        <p class="mb-10">Если у вас уже есть аккаунт, пожалуйста войдите на странице входа</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row End -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal" action="{% url 'auth:register' %}" enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        {{ register_form.as_p }}
+                        <input type="submit" value="Зарегестрироваться" class="newsletter-btn">
+                    </form>
+                </div>
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    {% endblock %}
+    <!-- Register Account End -->
+    <!-- Brand Logo Start -->
+    {% block brand_logo %}
+        {% include 'authapp/includes/inc_brand_logo.html' %}
+    {% endblock %}               
+    <!-- Brand Logo End -->
+</div>
