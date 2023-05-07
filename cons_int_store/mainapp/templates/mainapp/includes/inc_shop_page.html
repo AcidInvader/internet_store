@@ -9,14 +9,12 @@
                 <div class="sidebar white-bg">
                     <div class="single-sidebar">
                         <div class="group-title">
-                            <h2>categories</h2>
+                            <h2>Категории товаров</h2>
                         </div>
                         <ul>
-                            <li><a href="#">Electrical (9)</a></li>
-                            <li><a href="#">Hardware (11)</a></li>
-                            <li><a href="#">Drill Machine (8)</a></li>
-                            <li><a href="#">Tools Box (10)</a></li>
-                            <li><a href="#">Power Saw (5)</a></li>
+                            {% for category in categories %}
+                                <li><a href="{% url 'shop:good' category.id %}">{{category.name}} (9)</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="single-sidebar">
@@ -87,14 +85,16 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
-                                           <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
+                                        {% for product in products %}
+                                        <a href="{% url 'product' %}">
+                                           <img class="primary-img" src="/media/{{ product.image }}" alt="single-product">
                                         </a>
+                                        {% endfor %}
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -115,14 +115,14 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
+                                        <a href="{% url 'product' %}">
                                             <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -143,14 +143,14 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
+                                        <a href="{% url 'product' %}">
                                            <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -178,14 +178,14 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
+                                        <a href="{% url 'product' %}">
                                             <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -206,14 +206,14 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
+                                        <a href="{% url 'product' %}">
                                             <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -234,14 +234,14 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{% url 'product:index' %}">
+                                        <a href="{% url 'product' %}">
                                            <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                        <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                        <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -273,7 +273,7 @@
                 <div class="grid-list-top border-default universal-padding fix mb-30">
                     <div class="grid-list-view f-left">
                         <ul class="list-inline nav">
-                            <li><a data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a></li>
+                            <li><a data-toggle="tab" href="#grid-view" ><i class="fa fa-th"></i></a></li>
                             <li><a  class="active" data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
                             <li><span class="grid-item-list"> Items 1-12 of 13</span></li>
                         </ul>
@@ -298,14 +298,15 @@
                     <div class="tab-content fix">
                         <div id="grid-view" class="tab-pane ">
                             <div class="row">
-                                <!-- Single Product Start -->                    
+                                <!-- Single Product Start -->
+                                {% for product in products %}                  
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
-                                                <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
-                                                <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
+                                            <a href="{% url 'product' %}">
+                                                <img class="primary-img" src="/media/{{ product.image}}" alt="single-product">
+                                                <img class="secondary-img" src="/media/{{ product.image}}" alt="single-product">
                                             </a>
                                         </div>
                                         <!-- Product Image End -->
@@ -318,8 +319,8 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
-                                            <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
+                                            <h4><a href="{% url 'product' %}">{{ product.name }}</a></h4>
+                                            <p><span class="price">${{ product.price }}</span><del class="prev-price">${{ product.price }}</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
                                                     <a href="{% url 'wishlist' %}" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
@@ -331,13 +332,14 @@
                                         <!-- Product Content End -->
                                     </div>
                                 </div>
+                                {% endfor %}
                                 <!-- Single Product End -->
                                 <!-- Single Product Start -->                    
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                             </a>
@@ -352,7 +354,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$45.00</span><del class="prev-price">$50.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -372,7 +374,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                             </a>
@@ -387,7 +389,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$68.00</span><del class="prev-price">$70.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -406,7 +408,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
                                             </a>
@@ -421,7 +423,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$25.00</span><del class="prev-price">$30.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -441,7 +443,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                             </a>
@@ -456,7 +458,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -475,7 +477,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                             </a>
@@ -490,7 +492,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$40.00</span><del class="prev-price">$50.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -509,7 +511,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                             </a>
@@ -524,7 +526,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$25.00</span><del class="prev-price">$29.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -544,7 +546,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
                                             </a>
@@ -559,7 +561,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -578,7 +580,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                             </a>
@@ -593,7 +595,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -613,7 +615,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                             </a>
@@ -628,7 +630,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -648,7 +650,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                             </a>
@@ -663,7 +665,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -682,7 +684,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
                                             </a>
@@ -697,7 +699,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -717,7 +719,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                             </a>
@@ -732,7 +734,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -752,7 +754,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                             </a>
@@ -767,7 +769,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -786,7 +788,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                             </a>
@@ -801,7 +803,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -821,7 +823,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                             </a>
@@ -836,7 +838,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -855,7 +857,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                             </a>
@@ -870,7 +872,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -890,7 +892,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                             </a>
@@ -905,7 +907,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -924,7 +926,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                             </a>
@@ -939,7 +941,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -959,7 +961,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                             </a>
@@ -974,7 +976,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -993,7 +995,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{% url 'product:index' %}">
+                                            <a href="{% url 'product' %}">
                                                 <img class="primary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                             </a>
@@ -1008,7 +1010,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                            <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                             <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -1031,7 +1033,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                     </a>
@@ -1046,7 +1048,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1064,7 +1066,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                     </a>
@@ -1079,7 +1081,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1098,7 +1100,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                     </a>
@@ -1113,7 +1115,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1131,7 +1133,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
                                     </a>
@@ -1146,7 +1148,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1165,7 +1167,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                                     </a>
@@ -1180,7 +1182,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1198,7 +1200,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
                                     </a>
@@ -1213,7 +1215,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">
@@ -1232,7 +1234,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{% url 'product:index' %}">
+                                    <a href="{% url 'product' %}">
                                         <img class="primary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
                                         <img class="secondary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
                                     </a>
@@ -1247,7 +1249,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{% url 'product:index' %}">Products Name Here</a></h4>
+                                    <h4><a href="{% url 'product' %}">Products Name Here</a></h4>
                                     <p><span class="price">$30.00</span><del class="prev-price">$32.00</del></p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati velit, similique voluptas doloribus assumenda quis libero animi cumque dignissimos quisquam, quaerat ea laboriosam incidunt ullam.</p>
                                     <div class="pro-actions">

@@ -83,25 +83,25 @@
                                 <!-- Home Version Dropdown End -->
                             </li>
                             <li><a href="{% url 'about' %}">О нас</a></li>                                        
-                            <li><a href="{% url 'shop' %}">Магаз<i class="fa fa-angle-down"></i></a>
+                            <li><a href="{% url 'shop:products' %}">Магаз<i class="fa fa-angle-down"></i></a>
                                 <!-- Home Version Dropdown Start -->
                                 <ul class="ht-dropdown dropdown-style-two">
-                                    <li><a href="{% url 'shop' %}">Магаз</a>
+                                    <li><a href="{% url 'shop:products' %}">Магаз</a>
                                         <!-- Start Two Step -->
                                         <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                            <li><a href="{% url 'shop' %}">Product Category Name</a>
+                                            <li><a href="{% url 'shop:products' %}">Product Category Name</a>
                                                 <!-- Start Three Step -->
                                                 <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'shop' %}">Product Category Name</a></li>
-                                            <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                            <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
+                                            <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{% url 'product:index' %}">product details Page</a></li>
+                                    <li><a href="{% url 'product' %}">Товары</a></li>
                                     <li><a href="{% url 'compare' %}">Compare Page</a></li>
                                     <li><a href="{% url 'cart' %}">Cart Page</a></li>
                                     <li><a href="{% url 'checkout' %}">Checkout Page</a></li>
@@ -155,7 +155,7 @@
                                             <a href="#"><img src="{% static 'img/menu/1.jpg' %}" alt="cart-image"></a>
                                         </div>
                                         <div class="cart-content">
-                                            <h6><a href="{% url 'product:index' %}">Products Name</a></h6>
+                                            <h6><a href="{% url 'product' %}">Products Name</a></h6>
                                             <span>1 × $399.00</span>
                                         </div>
                                         <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
@@ -167,7 +167,7 @@
                                             <a href="#"><img src="{% static 'img/menu/2.jpg' %}" alt="cart-image"></a>
                                         </div>
                                         <div class="cart-content">
-                                            <h6><a href="{% url 'product:index' %}">Products Name</a></h6>
+                                            <h6><a href="{% url 'product' %}">Products Name</a></h6>
                                             <span>2 × $299.00</span>
                                         </div>
                                         <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
@@ -201,24 +201,24 @@
                                 </ul>
                                 <!-- Home Version Dropdown End -->
                             </li>
-                            <li><a href="{% url 'shop' %}">shop</a>
+                            <li><a href="{% url 'shop:products' %}">Магаз</a>
                                 <!-- Mobile Menu Dropdown Start -->
                                 <ul>
-                                    <li><a href="{% url 'product:index' %}">Магаз</a>
+                                    <li><a href="{% url 'product' %}">Магаз</a>
                                         <ul>
-                                            <li><a href="{% url 'shop' %}">Product Category Name</a>
+                                            <li><a href="{% url 'shop:products' %}">Product Category Name</a>
                                                 <!-- Start Three Step -->
                                                 <ul>
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
-                                                    <li><a href="{% url 'shop' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
+                                                    <li><a href="{% url 'shop:products' %}">Product Category Name</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'shop' %}">Категория продукта</a></li>
-                                            <li><a href="{% url 'shop' %}">Категория продукта</a></li>
+                                            <li><a href="{% url 'shop:products' %}">Категория продукта</a></li>
+                                            <li><a href="{% url 'shop:products' %}">Категория продукта</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{% url 'product:index' %}">product details Page</a></li>
+                                    <li><a href="{% url 'product' %}">product details Page</a></li>
                                     <li><a href="{% url 'compare' %}">Compare Page</a></li>
                                     <li><a href="{% url 'cart' %}">Cart Page</a></li>
                                     <li><a href="{% url 'checkout' %}">Checkout Page</a></li>
