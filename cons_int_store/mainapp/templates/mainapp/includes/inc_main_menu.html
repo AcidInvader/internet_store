@@ -138,15 +138,10 @@
             <div class="col-lg-3 col-sm-7 col-7">
                 <div class="cart-box text-right">
                     <ul>
-                        <li><a href="compare.html"><i class="fa fa-cog"></i></a>
-                            <ul class="ht-dropdown">
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="account.html">Account</a></li>                                            
-                            </ul>
-                        </li>                                    
-                        <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                        {% if user.is_authenticated %}                         
+                        <li><a href="{% url 'basket:view' %}"><i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="{% url 'basket:view' %}"><i class="fa fa-shopping-basket"></i><span class="cart-counter">{% if user.basket.all|length %} {{ user.basket.all|length }} {% endif %} </span></a>
+                        {% endif %}    
                             <ul class="ht-dropdown main-cart-box">
                                 <li>
                                     <!-- Cart Box Start -->
@@ -184,6 +179,7 @@
                                 </li>
                             </ul>
                         </li>
+                        {% comment %} {% endfor %} {% endcomment %}
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from mainapp.models import Product, ProductCategory
+from basketapp.models import Basket
 
 # Create your views here.
 

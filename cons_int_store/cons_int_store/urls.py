@@ -34,6 +34,7 @@ urlpatterns = [
     path('blog/', mainapp.blog, name='blog'),
     path('blog-details/', mainapp.blog_details, name='blog-details'),
     path('contact/', mainapp.contact, name='contact'),
+    path('basket/', include('basketapp.urls', namespace='basket')),
 ]
 
 # Чтобы Django раздавал медиафайлы на этапе разработки, необходимо 
